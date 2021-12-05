@@ -5,6 +5,8 @@ import 'package:food_door/components/fixed_button.dart';
 import 'package:food_door/components/rich_text.dart';
 import 'package:food_door/components/text_from_field.dart';
 import 'package:food_door/constant.dart';
+import 'package:food_door/screens/home_screen.dart';
+import 'package:food_door/screens/onBoardingScreen/onboarding_screen.dart';
 import 'package:get/get.dart';
 import 'package:getwidget/components/button/gf_button.dart';
 import 'package:getwidget/types/gf_button_type.dart';
@@ -61,7 +63,9 @@ class LoginScreen extends StatelessWidget {
               FixedButton(
                 key: key,
                 label: "Sign in",
-                onTap: () {},
+                onTap: () {
+                  Get.to(()=>const HomeScreen());
+                },
               ),
               const SizedBox(
                 height: 30,
@@ -71,7 +75,8 @@ class LoginScreen extends StatelessWidget {
                   leftLabel: "Don't have an account?",
                   rightLabel: " Sign up",
                   onTap: () {
-                    Get.toNamed(AppRoutes.registerScreen);
+                    Get.to(()=>OnBoardingScreen());
+                    // Get.toNamed(AppRoutes.registerScreen);
                     print("c");
                   },
                   key: key,
