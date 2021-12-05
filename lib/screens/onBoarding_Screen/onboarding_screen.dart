@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_door/components/page_view.dart';
 import 'package:food_door/constant.dart';
-import 'package:food_door/screens/onBoardingScreen/controller/onBoarding_controller.dart';
-import 'package:food_door/screens/signinScreen/login_screen.dart';
+import 'package:food_door/screens/login_Screen/login_screen.dart';
+import 'package:food_door/screens/onBoarding_Screen/controller/onboarding_controller.dart';
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -59,7 +59,7 @@ class OnBoardingScreen extends StatelessWidget {
                   SmoothPageIndicator(
                       controller: _controller.boardController, // PageController
                       count: _controller.labels.length,
-                      effect: const ScrollingDotsEffect(
+                      effect: const ExpandingDotsEffect(
                         dotColor: Colors.grey,
                         dotHeight: 10,
                         activeDotColor: K.mainColor,
@@ -71,7 +71,7 @@ class OnBoardingScreen extends StatelessWidget {
                       ? GestureDetector(
                           onTap: () {
                             if (_controller.isLast.value) {
-                              Get.offAll(LoginScreen());
+                              Get.offAll(const LoginScreen());
                             }
                           },
                           child: const Text(

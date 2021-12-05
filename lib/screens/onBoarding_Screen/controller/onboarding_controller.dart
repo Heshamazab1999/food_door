@@ -9,16 +9,23 @@ class OnBoardingController extends BaseController {
   final isFirst = true.obs;
   final List<BoardingModel> labels = [
     BoardingModel(
-        label: "Track Your Health\nReports With Us",
+        label: "Track Your Order",
+        description:
+            "When you order eat street,we will\nhook you up with exclusive coupns\n special send rewards ",
         image: "assets/images/delivery3.json"),
     BoardingModel(
-        label: "Get Reminders For Your\nMedications ",
-        image: "assets/images/delivery1.json"),
+        label: "Fastest Delivery ",
+        description:
+            "We make food ordering fast,simple\n and free no matter if you order\nonline or cash",
+        image: "assets/images/delivery5.json"),
     BoardingModel(
-        label: "Share Your Reports\nWith Your Doctors",
+        label: "order deliver soon",
+        description:
+            "If you order something and it\n says the estimated delivery date\n is in a day,",
         image: "assets/images/delivery4.json"),
     BoardingModel(
-        label: "Book an appointment with a\nright doctor",
+        label: "Welcome to Delivery ",
+        description: "thank you  ",
         image: "assets/images/delivery2.json"),
   ];
 

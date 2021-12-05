@@ -14,7 +14,7 @@ class FixedRichTextLogin extends StatelessWidget {
     return RichText(
         text: TextSpan(
             text: leftLabel,
-            style: K.textStyle,
+            style: K.hintStyle,
             children: [
           TextSpan(
               text: rightLabel,

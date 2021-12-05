@@ -24,7 +24,7 @@ class FixedAppbar extends StatelessWidget with PreferredSizeWidget {
       ),
       title: Text(
         label!,
-        style: const TextStyle(fontSize: 25, color: K.blackColor),
+        style: const TextStyle(fontSize: 20, color: K.blackColor),
       ),
       centerTitle: true,
     );
