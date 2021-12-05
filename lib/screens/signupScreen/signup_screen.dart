@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:food_door/Routes/app_routes.dart';
 import 'package:food_door/components/fixed_appbar.dart';
 import 'package:food_door/components/fixed_button.dart';
 import 'package:food_door/components/rich_text.dart';
 import 'package:food_door/components/text_from_field.dart';
 import 'package:food_door/constant.dart';
+import 'package:get/get.dart';
 import 'package:getwidget/components/button/gf_button.dart';
 import 'package:getwidget/types/gf_button_type.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,35 +18,45 @@ class LoginScreen extends StatelessWidget {
       backgroundColor: K.whiteColor,
       appBar: FixedAppbar(
         key: key,
-        label: "Sign in",
+        label: "Sign up",
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(
-                height: 50,
+                height: 20,
               ),
               const Text(
-                "Welcome to",
-                style: TextStyle(fontSize: 20, color: K.blackColor),
+                "Create an account",
+                style: K.welcomeTextStyle,
               ),
-              const SizedBox(
-                height: 5,
-              ),
-              const Text(
-                "Enter your Phone number or Email\naddress for sign in,Enjoy your food",
-                style: TextStyle(fontSize: 15, color: K.blackColor),
+              FixedRichTextLogin(
+                leftLabel: "Enter your Name,Email,Password,\nfor sign up? ",
+                rightLabel: "Already have account?",
+                onTap: () {
+                  Get.toNamed(AppRoutes.loginScreen);
+                  print("c");
+                },
+                key: key,
               ),
               const SizedBox(
                 height: 10,
               ),
               FixedTextFieldInput(
                 key: key,
-                label: "Username",
                 icon: Icons.person,
+                label: "UserName",
+                onChange: (v) {
+                  print(v);
+                },
+              ),
+              FixedTextFieldInput(
+                key: key,
+                icon: Icons.email,
+                label: "Email",
                 onChange: (v) {
                   print(v);
                 },
@@ -58,29 +70,18 @@ class LoginScreen extends StatelessWidget {
                 },
               ),
               const SizedBox(
-                height: 10,
+                height: 20,
               ),
               FixedButton(
                 key: key,
-                label: "Sign in",
+                label: "Create account",
                 onTap: () {},
               ),
               const SizedBox(
-                height: 30,
-              ),
-              Center(
-                child: FixedRichTextLogin(
-                  onTap: () {
-                    print("c");
-                  },
-                  key: key,
-                ),
-              ),
-              const SizedBox(
-                height: 10,
+                height: 20,
               ),
               const Center(
-                  child: Text("or",
+                  child: Text("OR",
                       style: TextStyle(fontSize: 18, color: K.blackColor))),
               const SizedBox(
                 height: 20,
@@ -106,6 +107,7 @@ class LoginScreen extends StatelessWidget {
                 text: "Connect with Google",
                 textStyle: K.textButtonStyle,
                 size: 50,
+
                 icon: const Icon(
                   Icons.g_mobiledata_outlined,
                   size: 30,

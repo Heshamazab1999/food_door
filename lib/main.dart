@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:food_door/screens/loginScreen/login_screen.dart';
+import 'package:food_door/Routes/app_routes.dart';
+import 'package:food_door/Routes/app_screen.dart';
+import 'package:get/get.dart';
 
 void main() {
-  runApp( const MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -10,9 +12,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      initialRoute: AppRoutes.loginScreen,
+      getPages: AppScreen.screens,
     );
   }
 }

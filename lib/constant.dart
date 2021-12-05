@@ -7,4 +7,6 @@ class K {
   static const grayColor = Color(0xFFC2C2CB);
   static const hintStyle = TextStyle(color: K.grayColor, fontSize: 20);
   static const textButtonStyle = TextStyle(color: K.whiteColor, fontSize: 20);
+  static const welcomeTextStyle = TextStyle(fontSize: 22, color: K.blackColor);
+  static const textStyle = TextStyle(fontSize: 15, color: K.blackColor);
 }

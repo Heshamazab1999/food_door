@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_door/constant.dart';
+import 'package:get/get.dart';
 
 class FixedAppbar extends StatelessWidget with PreferredSizeWidget {
   final String? label;
@@ -13,7 +14,7 @@ class FixedAppbar extends StatelessWidget with PreferredSizeWidget {
       backgroundColor: K.whiteColor,
       leading: IconButton(
         onPressed: () {
-          Navigator.pop(context);
+          Get.back();
         },
         icon: const Icon(
           Icons.arrow_back_ios_new_sharp,
