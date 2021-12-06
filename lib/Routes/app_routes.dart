@@ -3,4 +3,6 @@ class AppRoutes {
   static const registerScreen = "/Register_Screen";
   static const loginScreen = '/Login_Screen';
   static const forgetPassword = '/Forget_Password';
+  static const phoneLogin = '/Phone_Login';
+  static const verification = '/Verification_Screen';
 }

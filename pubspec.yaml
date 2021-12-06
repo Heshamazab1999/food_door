@@ -43,6 +43,8 @@ dependencies:
   permission_handler: ^8.3.0
   auto_size_text: ^3.0.0
   material_design_icons_flutter: ^5.0.6595
+  intl_phone_number_input: ^0.7.0+2
+  pin_code_fields: ^7.3.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

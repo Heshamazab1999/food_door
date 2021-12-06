@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class K {
   static const mainColor = Color(0xFF0A8791);
+  static const secondColor = Color(0xFFFBA83C);
   static const whiteColor = Colors.white;
   static const blackColor = Color(0xFF0E122B);
   static const grayColor = Color(0xFFC2C2CB);
