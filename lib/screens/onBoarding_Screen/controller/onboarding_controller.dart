@@ -17,7 +17,7 @@ class OnBoardingController extends BaseController {
         label: "Fastest Delivery ",
         description:
             "We make food ordering fast,simple\n and free no matter if you order\nonline or cash",
-        image: "assets/images/delivery5.json"),
+        image: "assets/images/delivery.json"),
     BoardingModel(
         label: "order deliver soon",
         description:
