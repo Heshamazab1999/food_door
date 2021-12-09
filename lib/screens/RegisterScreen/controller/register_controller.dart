@@ -23,37 +23,37 @@ class RegisterController extends BaseController {
   }
 
   Future<bool> requestImagePermission() async {
-    final permissions = await [
-      Permission.photos,
-      Permission.storage,
-      Permission.camera
-    ].request();
-    if (Platform.isAndroid &&
-        permissions[Permission.storage]!.isGranted &&
-        permissions[Permission.camera]!.isGranted) {
+    if (Platform.isAndroid) {
+      Permission.camera.request().isGranted;
+      Permission.storage.request().isGranted;
       return true;
-    } else if (Platform.isIOS &&
-        permissions[Permission.photos.isGranted]!.isGranted &&
-        permissions[Permission.camera.isGranted]!.isGranted) {
+    } else if (Platform.isIOS) {
+      Permission.camera.request().isGranted;
+      Permission.photos.request().isGranted;
       return true;
     }
     return false;
   }
 
   chooseProfileImage() async {
-    if (_imgPath.value.isEmpty || _imgPath.value == '') {
-      try {
-        final isGallery = await Get.dialog(const ChooseImageDialog());
-        XFile? image;
-        if (isGallery != null && isGallery == true) {
-          image = await _picker.pickImage(source: ImageSource.gallery);
-        } else if (isGallery != null && isGallery == false) {
-          image = await _picker.pickImage(source: ImageSource.camera);
+    final status = await requestImagePermission();
+    if (status) {
+      if (_imgPath.value.isEmpty || _imgPath.value == '') {
+        try {
+          final isGallery = await Get.dialog(const ChooseImageDialog());
+          XFile? image;
+          if (isGallery != null && isGallery == true) {
+            image = await _picker.pickImage(source: ImageSource.gallery);
+          } else if (isGallery != null && isGallery == false) {
+            image = await _picker.pickImage(source: ImageSource.camera);
+          }
+          if (image != null) _imgPath.value = image.path;
+        } catch (e) {
+          print(e);
         }
-        if (image != null) _imgPath.value = image.path;
-      } catch (e) {
-        print(e);
       }
+    } else {
+      print("error");
     }
   }
 }
