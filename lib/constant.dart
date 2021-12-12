@@ -9,6 +9,8 @@ class K {
   static const hintStyle = TextStyle(color: K.grayColor, fontSize: 14);
   static const textButtonStyle = TextStyle(color: K.whiteColor, fontSize: 16);
   static const welcomeTextStyle = TextStyle(fontSize: 18, color: K.blackColor);
+  static const textCategoryStyle =
+      TextStyle(fontSize: 18, color: K.secondColor);
   static const textStyle = TextStyle(fontSize: 13, color: K.blackColor);
   static const textStyleAlert = TextStyle(
       fontSize: 18.0,

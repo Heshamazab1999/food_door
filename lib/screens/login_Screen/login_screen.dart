@@ -97,7 +97,7 @@ class LoginScreen extends StatelessWidget {
                 key: key,
                 label: "Sign in",
                 onTap: () {
-                  Get.toNamed(AppRoutes.phoneLogin);
+                  Get.toNamed(AppRoutes.categoryScreen);
                   _controller.email.clear();
                   _controller.password.clear();
                 },
@@ -142,7 +142,9 @@ class LoginScreen extends StatelessWidget {
                     size: GFSize.MEDIUM,
                   ),
                   GFIconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.toNamed(AppRoutes.phoneLogin);
+                    },
                     color: const Color(0xFF25D366),
                     icon: const Icon(
                       MdiIcons.whatsapp,
