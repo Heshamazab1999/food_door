@@ -97,7 +97,7 @@ class LoginScreen extends StatelessWidget {
                 key: key,
                 label: "Sign in",
                 onTap: () {
-                  Get.toNamed(AppRoutes.categoryScreen);
+                  Get.toNamed(AppRoutes.homeScreen);
                   _controller.email.clear();
                   _controller.password.clear();
                 },
