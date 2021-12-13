@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:food_door/components/icon_row.dart';
+import 'package:food_door/components/rate_row.dart';
 import 'package:food_door/constant.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
@@ -33,18 +35,20 @@ class CardCart extends StatelessWidget {
         shadowColor: K.grayColor,
         child: Container(
           clipBehavior: Clip.antiAlias,
-          height: 130,
+          height: 120,
           decoration: BoxDecoration(
               color: K.whiteColor, borderRadius: BorderRadius.circular(10)),
           child: Row(
             children: [
-              Image.asset(
-                image!,
-                width: 150,
-                fit: BoxFit.cover,
-                height: 130,
+              Expanded(
+                flex: 1,
+                child: Image.asset(
+                  image!,
+                  fit: BoxFit.cover,
+                ),
               ),
               Expanded(
+                flex: 2,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -61,49 +65,46 @@ class CardCart extends StatelessWidget {
                       ],
                     ),
                     Row(
-                      children:  [
-                        const Icon(
-                          MdiIcons.food,
-                          color: K.grayColor,
+                      children: [
+                        IconRow(
+                          key: key,
+                          icon: MdiIcons.foodOutline,
+                          label: name,
                         ),
-                        Text(
-                          name!,
-                          style: K.hintStyle,
+                        const SizedBox(
+                          width: 10,
                         ),
-                        const Icon(
-                          MdiIcons.mapMarker,
-                          color: K.grayColor,
+                        IconRow(
+                          key: key,
+                          icon: MdiIcons.mapMarker,
+                          label: distance,
                         ),
-                        Text(
-                          distance!,
-                          style: K.hintStyle,
-                        )
                       ],
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children:  [
-                        const Icon(
-                          MdiIcons.star,
-                          color: K.secondColor,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        RateRow(
+                          key: key,
+                          rate: rate,
                         ),
-                        Text(rate!),
-                        const Icon(
-                          MdiIcons.timelapse,
-                          color: K.grayColor,
+                        IconRow(
+                          key: key,
+                          icon: MdiIcons.timelapse,
+                          label: time,
                         ),
-                        Text(
-                         time!,
-                          style: K.hintStyle,
+                        Row(
+                          children: const [
+                            Icon(
+                              MdiIcons.phone,
+                              color: Colors.green,
+                            ),
+                            Text(
+                              "contact",
+                              style: K.hintStyle,
+                            )
+                          ],
                         ),
-                        const Icon(
-                          MdiIcons.phone,
-                          color: Colors.green,
-                        ),
-                        const Text(
-                          "contact",
-                          style: K.hintStyle,
-                        )
                       ],
                     )
                   ],

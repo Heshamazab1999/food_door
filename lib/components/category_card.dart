@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_door/components/container_card.dart';
+import 'package:food_door/components/rate_row.dart';
 import 'package:food_door/constant.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
@@ -65,17 +66,9 @@ class CategoryCard extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
-                      children: [
-                        const Icon(
-                          Icons.star,
-                          color: K.secondColor,
-                        ),
-                        Text(
-                          rate!,
-                          style: K.textStyle,
-                        ),
-                      ],
+                    RateRow(
+                      key: key,
+                      rate: rate,
                     ),
                     Row(
                       children: [

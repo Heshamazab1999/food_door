@@ -1,7 +1,5 @@
 import 'package:food_door/Routes/app_routes.dart';
-import 'package:food_door/screens/Category_Screen/category_screen.dart';
 import 'package:food_door/screens/Forget_Password/forget_password.dart';
-import 'package:food_door/screens/Home/home_screen.dart';
 import 'package:food_door/screens/RegisterScreen/signup_screen.dart';
 import 'package:food_door/screens/login_Screen/login_screen.dart';
 import 'package:food_door/screens/onBoarding_Screen/onboarding_screen.dart';
@@ -18,7 +16,6 @@ class AppScreen {
     GetPage(name: AppRoutes.phoneLogin, page: () => const PhoneLogin()),
     GetPage(
         name: AppRoutes.verification, page: () => const VerificationScreen()),
-    GetPage(name: AppRoutes.categoryScreen, page: () => const CategoryScreen()),
-    GetPage(name: AppRoutes.homeScreen, page: () => const Home()),
+
   ];
 }
